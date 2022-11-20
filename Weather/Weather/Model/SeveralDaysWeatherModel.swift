@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct DailyForecastSeveralDaysModel: Decodable {
+struct SeveralDaysWeatherModel: Decodable {
     let city: CityModel
-    let list: [DailyForecastModel]
+    let list: [DayWeatherModel]
 }
 
 struct CityModel: Decodable {
@@ -18,13 +18,13 @@ struct CityModel: Decodable {
 }
 
 // MARK: - List
-struct DailyForecastModel: Decodable {
-    let temp: TempModel
+struct DayWeatherModel: Decodable {
+    let temp: TemperatureModel
     let humidity: Int
     let condition: String
 }
 
-struct TempModel: Decodable {
+struct TemperatureModel: Decodable {
     let min: Int
     let max: Int
 }

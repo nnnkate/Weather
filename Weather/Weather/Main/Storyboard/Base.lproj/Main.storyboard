@@ -34,7 +34,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scc-q7-728">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scc-q7-728" customClass="CurrentWeatherView" customModule="Weather" customModuleProvider="target">
                                 <rect key="frame" x="24" y="169" width="345" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -73,10 +73,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SeveralDaysWeatherTableView" destination="IBx-vA-kXO" id="mPc-Md-7jF"/>
                         <outlet property="backgroundImage" destination="t4F-gM-t8T" id="G62-gj-99D"/>
                         <outlet property="cityNameLabel" destination="krK-Pc-9o0" id="4Qm-dX-8Yz"/>
                         <outlet property="currentWeatherView" destination="scc-q7-728" id="okD-f7-1lV"/>
+                        <outlet property="severalDaysWeatherTableView" destination="IBx-vA-kXO" id="gId-bd-ide"/>
                         <outlet property="weatherConditionLabel" destination="ntl-qi-bQz" id="e4O-6g-K6V"/>
                     </connections>
                 </viewController>
