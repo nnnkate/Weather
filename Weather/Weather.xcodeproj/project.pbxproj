@@ -13,6 +13,7 @@
 		85C6BE3F292A023D00DE0EB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE3D292A023D00DE0EB3 /* Main.storyboard */; };
 		85C6BE41292A023F00DE0EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE40292A023F00DE0EB3 /* Assets.xcassets */; };
 		85C6BE44292A023F00DE0EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE42292A023F00DE0EB3 /* LaunchScreen.storyboard */; };
+		85C6BE4D292A088300DE0EB3 /* DailyForecast10Days.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE4C292A088300DE0EB3 /* DailyForecast10Days.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		85C6BE40292A023F00DE0EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85C6BE43292A023F00DE0EB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85C6BE45292A023F00DE0EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C6BE4C292A088300DE0EB3 /* DailyForecast10Days.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DailyForecast10Days.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		85C6BE36292A023D00DE0EB3 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				85C6BE4B292A039400DE0EB3 /* Data */,
 				85C6BE37292A023D00DE0EB3 /* AppDelegate.swift */,
 				85C6BE39292A023D00DE0EB3 /* SceneDelegate.swift */,
 				85C6BE3B292A023D00DE0EB3 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				85C6BE45292A023F00DE0EB3 /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		85C6BE4B292A039400DE0EB3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				85C6BE4C292A088300DE0EB3 /* DailyForecast10Days.txt */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C6BE44292A023F00DE0EB3 /* LaunchScreen.storyboard in Resources */,
+				85C6BE4D292A088300DE0EB3 /* DailyForecast10Days.txt in Resources */,
 				85C6BE41292A023F00DE0EB3 /* Assets.xcassets in Resources */,
 				85C6BE3F292A023D00DE0EB3 /* Main.storyboard in Resources */,
 			);
