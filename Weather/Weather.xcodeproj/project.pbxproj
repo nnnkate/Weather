@@ -14,6 +14,7 @@
 		85C6BE41292A023F00DE0EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE40292A023F00DE0EB3 /* Assets.xcassets */; };
 		85C6BE44292A023F00DE0EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE42292A023F00DE0EB3 /* LaunchScreen.storyboard */; };
 		85C6BE4D292A088300DE0EB3 /* DailyForecast10Days.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE4C292A088300DE0EB3 /* DailyForecast10Days.txt */; };
+		85C6BE4F292A0BC600DE0EB3 /* CurrentWeather.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85C6BE4E292A0BC600DE0EB3 /* CurrentWeather.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		85C6BE43292A023F00DE0EB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85C6BE45292A023F00DE0EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85C6BE4C292A088300DE0EB3 /* DailyForecast10Days.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DailyForecast10Days.txt; sourceTree = "<group>"; };
+		85C6BE4E292A0BC600DE0EB3 /* CurrentWeather.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CurrentWeather.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		85C6BE4B292A039400DE0EB3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				85C6BE4E292A0BC600DE0EB3 /* CurrentWeather.txt */,
 				85C6BE4C292A088300DE0EB3 /* DailyForecast10Days.txt */,
 			);
 			path = Data;
@@ -138,6 +141,7 @@
 			files = (
 				85C6BE44292A023F00DE0EB3 /* LaunchScreen.storyboard in Resources */,
 				85C6BE4D292A088300DE0EB3 /* DailyForecast10Days.txt in Resources */,
+				85C6BE4F292A0BC600DE0EB3 /* CurrentWeather.txt in Resources */,
 				85C6BE41292A023F00DE0EB3 /* Assets.xcassets in Resources */,
 				85C6BE3F292A023D00DE0EB3 /* Main.storyboard in Resources */,
 			);
