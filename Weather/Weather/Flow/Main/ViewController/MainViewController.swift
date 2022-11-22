@@ -76,7 +76,7 @@ private extension MainViewController {
         weatherConditionLabel.textColor = .white.withAlphaComponent(0.6)
         currentWeatherView.layer.cornerRadius = 14
         severalDaysWeatherTableView.layer.cornerRadius = 14
-        severalDaysWeatherTableView.backgroundColor = AppColor.darkGray
+        severalDaysWeatherTableView.backgroundColor = AppColor.darkGray.withAlphaComponent(0.6)
     }
     
     func configureDataSource() {
