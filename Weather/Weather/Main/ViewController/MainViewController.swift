@@ -20,7 +20,7 @@ final class MainViewController: UIViewController {
     private(set) lazy var presenter: MainPresenter = MainPresenterImplementation(delegate: self)
     
     // - DataSource
-    private var dataSource: MainDataSource?
+    private var severalDaysWeatherDataSource: SeveralDaysWeatherDataSource?
 
     // - Life cycle
     override func viewDidLoad() {
@@ -34,10 +34,12 @@ final class MainViewController: UIViewController {
 // MARK: - MainPresenterDelegate
 extension MainViewController: MainPresenterDelegate {
     
-    func updateUI(currentWeatherData: CurrentWeatherData?,
-                  severalDaysWeatherData: SeveralDaysWeatherData?) {
+    func updateData(currentWeatherData: CurrentWeatherData?,
+                    severalDaysWeatherData: SeveralDaysWeatherData?) {
         updateCurrentWeatherView(currentWeatherData: currentWeatherData)
+        severalDaysWeatherDataSource?.set(data: severalDaysWeatherData?.list ?? [])
         updateSeveralDaysWeatherTableView(severalDaysWeatherData: severalDaysWeatherData)
+        severalDaysWeatherTableView.reloadData()
     }
     
 }
@@ -46,11 +48,11 @@ extension MainViewController: MainPresenterDelegate {
 private extension MainViewController {
     
     func updateCurrentWeatherView(currentWeatherData: CurrentWeatherData?) {
-        cityNameLabel.text = currentWeatherData?.city.name ?? ""
+        cityNameLabel.text = currentWeatherData?.city
         weatherConditionLabel.text = ""
-        if let weather = currentWeatherData?.weather {
+//        if let weather = currentWeatherData?.weather {
 //            weatherConditionLabel.text = weather.temp // "|"
-        }
+//        }
         currentWeatherView.set(data: currentWeatherData)
     }
     
@@ -65,6 +67,7 @@ private extension MainViewController {
     
     func configure() {
         configureUI()
+        configureDataSource()
     }
     
     func configureUI() {
@@ -74,6 +77,10 @@ private extension MainViewController {
         currentWeatherView.layer.cornerRadius = 14
         severalDaysWeatherTableView.layer.cornerRadius = 14
         severalDaysWeatherTableView.backgroundColor = AppColor.darkGray
+    }
+    
+    func configureDataSource() {
+        severalDaysWeatherDataSource = SeveralDaysWeatherDataSource(tableView: severalDaysWeatherTableView)
     }
     
 }

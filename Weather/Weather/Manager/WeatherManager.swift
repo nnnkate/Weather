@@ -8,8 +8,7 @@
 import Foundation
 
 protocol WeatherManager {
-    func getCurrentWeatherData() -> CurrentWeatherModel?
-    func getSeveralDaysWeatherData() -> SeveralDaysWeatherModel?
+    func getWeatherData() -> WeatherModel?
 }
 
 final class WeatherManagerImplementation {
@@ -24,20 +23,10 @@ final class WeatherManagerImplementation {
 
 extension WeatherManagerImplementation: WeatherManager {
     
-    func getCurrentWeatherData() -> CurrentWeatherModel? {
-        if let path = Bundle.main.path(forResource: "CurrentWeather", ofType: "txt") {
+    func getWeatherData() -> WeatherModel? {
+        if let path = Bundle.main.path(forResource: "WeatherData", ofType: "txt") {
             if let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path)) {
-                return try? jsonDecoder.decode(CurrentWeatherModel.self, from: data)
-            }
-            return nil
-        }
-        return nil
-    }
-    
-    func getSeveralDaysWeatherData() -> SeveralDaysWeatherModel? {
-        if let path = Bundle.main.path(forResource: "SeveralDaysWeather", ofType: "txt") {
-            if let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path)) {
-                return try? jsonDecoder.decode(SeveralDaysWeatherModel.self, from: data)
+                return try? jsonDecoder.decode(WeatherModel.self, from: data)
             }
             return nil
         }

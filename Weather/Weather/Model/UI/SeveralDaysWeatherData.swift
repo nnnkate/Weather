@@ -2,44 +2,32 @@
 //  SeveralDaysWeatherData.swift
 //  Weather
 //
-//  Created by Ekaterina Nedelko on 20.11.22.
+//  Created by Ekaterina Nedelko on 22.11.22.
 //
 
-import Foundation
+import UIKit
 
-struct SeveralDaysWeatherData: Decodable {
-    let city: CityData
+struct SeveralDaysWeatherData {
     let list: [DayWeatherData]
     
-    static func convertFromDto(dto: SeveralDaysWeatherModel) -> SeveralDaysWeatherData {
-        let city = dto.city
-        let list = dto.list.map { DayWeatherData.convertFromDto(dto: $0) }
-        let data = SeveralDaysWeatherData(city: CityData(id: city.id, name: city.name),
-                                          list: list)
+    static func convertFromDto(dto: WeatherModel?) -> SeveralDaysWeatherData {
+        let data = SeveralDaysWeatherData(list: dto?.forecast.map { DayWeatherData.convertFromDto(dto: $0) } ?? [])
         return data
     }
     
 }
 
-struct CityData: Decodable {
-    let id: Int
-    let name: String
-}
-
-struct DayWeatherData: Decodable {
-    let temp: TemperatureData
-    let humidity: Int
-    let condition: String
+struct DayWeatherData {
+    let date: String
+    let minTemperature: Int
+    let maxTemperature: Int
+    let weatherType: String
     
-    static func convertFromDto(dto: DayWeatherModel) -> DayWeatherData {
-        DayWeatherData(temp: TemperatureData(min: dto.temp.min,
-                                             max: dto.temp.max),
-                       humidity: dto.humidity,
-                       condition: dto.condition)
+    static func convertFromDto(dto: DayWeatherModel?) -> DayWeatherData {
+        let data = DayWeatherData(date: dto?.date ?? "",
+                                      minTemperature: dto?.minTemperature ?? 0,
+                                      maxTemperature: dto?.minTemperature ?? 0,
+                                      weatherType: dto?.weatherType ?? "")
+        return data
     }
-}
-
-struct TemperatureData: Decodable {
-    let min: Int
-    let max: Int
 }

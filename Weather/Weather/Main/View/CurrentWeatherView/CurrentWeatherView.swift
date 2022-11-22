@@ -24,7 +24,7 @@ final class CurrentWeatherView: UIView {
     }
 
     func set(data: CurrentWeatherData?) {
-        conditionLabel.text = data?.weather.first?.description ?? "" // change to current
+        conditionLabel.text = data?.description
     }
     
 }

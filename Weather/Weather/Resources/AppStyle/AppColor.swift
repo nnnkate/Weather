@@ -9,6 +9,7 @@ import UIKit
 
 enum AppColor {
     
+    static let gray = color(fromHex: "95A1B1")
     static let darkGray = color(fromHex: "3C4E65")
     static let separator = color(fromHex: "6E7887")
     

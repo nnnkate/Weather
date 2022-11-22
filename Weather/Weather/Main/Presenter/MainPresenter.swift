@@ -12,7 +12,7 @@ protocol MainPresenter {
 }
 
 protocol MainPresenterDelegate: AnyObject {
-    func updateUI(currentWeatherData: CurrentWeatherData?,
+    func updateData(currentWeatherData: CurrentWeatherData?,
                   severalDaysWeatherData: SeveralDaysWeatherData?)
 }
 
@@ -35,10 +35,11 @@ final class MainPresenterImplementation {
 extension MainPresenterImplementation: MainPresenter {
     
     func loadData() {
-        currentWeatherData = weatherManager.getCurrentWeatherData().map { CurrentWeatherData.convertFromDto(dto: $0) }
-        severalDaysWeatherData = weatherManager.getSeveralDaysWeatherData().map { SeveralDaysWeatherData.convertFromDto(dto: $0) }
-        delegate?.updateUI(currentWeatherData: currentWeatherData,
-                           severalDaysWeatherData: severalDaysWeatherData)
+        let weatherData = weatherManager.getWeatherData()
+        currentWeatherData = weatherData.map { CurrentWeatherData.convertFromDto(dto: $0) }
+        severalDaysWeatherData = weatherData.map { SeveralDaysWeatherData.convertFromDto(dto: $0) }
+        delegate?.updateData(currentWeatherData: currentWeatherData,
+                             severalDaysWeatherData: severalDaysWeatherData)
     }
     
 }
