@@ -32,9 +32,27 @@ class DayWeatherCell: UITableViewCell {
     
     func set(data: DayWeatherData) {
         self.data = data
-        configureUI()
+        updateData()
     }
         
+}
+
+// MARK: - Update
+private extension DayWeatherCell {
+    
+    func updateData() {
+        guard let data else {
+            dayLabel.text = ""
+            conditionImageView.image = UIImage()
+            minTemperatureLabel.text = ""
+            maxTemperatureLabel.text = ""
+            return }
+        dayLabel.text = data.date
+        conditionImageView.image = WeatherType(rawValue: data.weatherType)?.image
+        minTemperatureLabel.text = String(data.minTemperature)
+        maxTemperatureLabel.text = String(data.maxTemperature)
+    }
+    
 }
 
 // MARK: - Configure
@@ -45,16 +63,13 @@ private extension DayWeatherCell {
     }
     
     func configureUI() {
-        guard let data else {
-            dayLabel.text = ""
-            
-            minTemperatureLabel.text = ""
-            maxTemperatureLabel.text = ""
-            return }
-        dayLabel.text = data.date
-        
-        minTemperatureLabel.text = String(data.minTemperature)
-        maxTemperatureLabel.text = String(data.maxTemperature)
+        dayLabel.textColor = .white
+        dayLabel.font = UIFont(name: "Inter-Medium", size: 18)
+        conditionImageView.tintColor = .white
+        minTemperatureLabel.textColor = AppColor.gray
+        minTemperatureLabel.font = UIFont(name: "Inter-Medium", size: 16)
+        maxTemperatureLabel.textColor = .white
+        maxTemperatureLabel.font = UIFont(name: "Inter-Medium", size: 16)
     }
     
 }

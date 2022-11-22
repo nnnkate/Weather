@@ -12,6 +12,7 @@ final class SeveralDaysWeatherHeaderView: UIView {
     // - UI
     private lazy var label = UILabel()
     private lazy var imageView = UIImageView(image: UIImage(named: "calendar"))
+    private lazy var separator = UIView()
     
     // - Initialization
     init() {
@@ -40,11 +41,13 @@ private extension SeveralDaysWeatherHeaderView {
         label.text = "10-DAY FORECAST"
         label.textColor = AppColor.gray
         label.font = UIFont(name: "Inter-Medium", size: 14)
+        separator.backgroundColor = AppColor.gray
     }
 
     func addSubviews() {
         addSubview(label)
         addSubview(imageView)
+        addSubview(separator)
     }
     
     func makeConstraints() {
@@ -63,6 +66,14 @@ private extension SeveralDaysWeatherHeaderView {
             label.topAnchor.constraint(equalTo: self.topAnchor, constant: 14),
             label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14),
             label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 7)
+        ])
+        
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            separator.heightAnchor.constraint(equalToConstant: 1),
+            separator.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
+            separator.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            separator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14)
         ])
     }
     
