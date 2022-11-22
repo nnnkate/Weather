@@ -1,5 +1,5 @@
 {
-  "city": "Minsk",
+  "city": "Минск",
   "temperature": "-4 | Облачно",
   "description": "Облачная погода до конца дня. Порывы ветра до 25 км/ч.",
   "weather_per_day": [

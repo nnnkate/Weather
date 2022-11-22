@@ -49,7 +49,7 @@ private extension MainViewController {
     
     func updateCurrentWeatherView(currentWeatherData: CurrentWeatherData?) {
         cityNameLabel.text = currentWeatherData?.city
-        weatherConditionLabel.text = ""
+        weatherConditionLabel.text = currentWeatherData?.temperature ?? ""
 //        if let weather = currentWeatherData?.weather {
 //            weatherConditionLabel.text = weather.temp // "|"
 //        }
@@ -77,6 +77,7 @@ private extension MainViewController {
         currentWeatherView.layer.cornerRadius = 14
         severalDaysWeatherTableView.layer.cornerRadius = 14
         severalDaysWeatherTableView.backgroundColor = AppColor.darkGray.withAlphaComponent(0.6)
+        severalDaysWeatherTableView.showsVerticalScrollIndicator = false
     }
     
     func configureDataSource() {

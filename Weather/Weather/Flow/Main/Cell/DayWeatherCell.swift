@@ -12,6 +12,7 @@ class DayWeatherCell: UITableViewCell {
     // - UI
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
+    @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     
@@ -48,7 +49,10 @@ private extension DayWeatherCell {
             maxTemperatureLabel.text = ""
             return }
         dayLabel.text = data.date
-        conditionImageView.image = WeatherType(rawValue: data.weatherType)?.image
+        let weatherType = WeatherType(rawValue: data.weatherType)
+        conditionImageView.image = weatherType?.image
+        conditionLabel.isHidden = weatherType != .snow
+        conditionLabel.text = weatherType == .snow ? "70 %" : ""
         minTemperatureLabel.text = String(data.minTemperature)
         maxTemperatureLabel.text = String(data.maxTemperature)
     }
@@ -66,6 +70,8 @@ private extension DayWeatherCell {
         dayLabel.textColor = .white
         dayLabel.font = UIFont(name: "Inter-Medium", size: 18)
         conditionImageView.tintColor = .white
+        conditionLabel.textColor = AppColor.lightBlue
+        conditionLabel.font = UIFont(name: "Inter-Medium", size: 11)
         minTemperatureLabel.textColor = AppColor.gray
         minTemperatureLabel.font = UIFont(name: "Inter-Medium", size: 16)
         maxTemperatureLabel.textColor = .white

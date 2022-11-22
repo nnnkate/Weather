@@ -61,6 +61,10 @@ extension SeveralDaysWeatherDataSource: UITableViewDelegate {
         SeveralDaysWeatherHeaderView()
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        45
+    }
+    
 }
 
 
