@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,11 +36,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scc-q7-728" customClass="CurrentWeatherView" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="24" y="153" width="345" height="180"/>
+                                <rect key="frame" x="24" y="186" width="345" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-vA-kXO">
-                                <rect key="frame" x="24" y="342" width="345" height="460"/>
+                                <rect key="frame" x="24" y="375" width="345" height="460"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -48,7 +49,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IBx-vA-kXO" firstAttribute="top" secondItem="scc-q7-728" secondAttribute="bottom" priority="250" constant="9" id="71n-Jk-jgf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IBx-vA-kXO" secondAttribute="bottom" constant="16" id="8x4-Gm-9uB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t4F-gM-t8T" secondAttribute="trailing" id="Due-Bf-oFN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IBx-vA-kXO" secondAttribute="trailing" constant="24" id="GuJ-9O-QUB"/>
                             <constraint firstItem="scc-q7-728" firstAttribute="top" relation="lessThanOrEqual" secondItem="ntl-qi-bQz" secondAttribute="bottom" priority="500" constant="57" id="IWj-12-nJB"/>
@@ -57,6 +57,7 @@
                             <constraint firstItem="scc-q7-728" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.211268" id="NaG-E4-AIl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ntl-qi-bQz" secondAttribute="trailing" constant="24" id="O6G-rS-wX9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="scc-q7-728" secondAttribute="trailing" constant="24" id="Xoo-In-xfX"/>
+                            <constraint firstAttribute="bottom" secondItem="IBx-vA-kXO" secondAttribute="bottom" constant="17" id="eGU-HX-aqm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="krK-Pc-9o0" secondAttribute="trailing" constant="24" id="efX-gn-Ebm"/>
                             <constraint firstItem="IBx-vA-kXO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.54" id="gfD-Y7-Qmz"/>
                             <constraint firstItem="IBx-vA-kXO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="hxx-g5-5fJ"/>
