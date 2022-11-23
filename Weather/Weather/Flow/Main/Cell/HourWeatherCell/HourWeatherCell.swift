@@ -7,12 +7,12 @@
 
 import UIKit
 
-class HourWeatherCell: UICollectionViewCell {
+final class HourWeatherCell: UICollectionViewCell {
     
     // - UI
-    @IBOutlet weak var hourLabel: UILabel!
-    @IBOutlet weak var conditionImageView: UIImageView!
-    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var hourLabel: UILabel!
+    @IBOutlet private weak var conditionImageView: UIImageView!
+    @IBOutlet private weak var temperatureLabel: UILabel!
     
     // - Register Cell
     static let reuseID = "HourWeatherCell"
@@ -24,6 +24,7 @@ class HourWeatherCell: UICollectionViewCell {
     // - Data
     private(set) var data: HourWeatherData?
 
+    // - Initialization
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
@@ -45,10 +46,17 @@ private extension HourWeatherCell {
             conditionImageView.image = UIImage()
             temperatureLabel.text = ""
             return }
-        hourLabel.text = data.timestamp
-        let weatherType = data.weatherType
-        conditionImageView.image = weatherType?.image
-        temperatureLabel.text = data.temperature
+        let timestamp = Int(data.timestamp)
+        let currentDateHour = Calendar.current.component(.hour, from: Date())
+        hourLabel.text = timestamp == currentDateHour ? "Сейчас" : data.timestamp
+        if data.sunset {
+            conditionImageView.image = UIImage(named: "sunset")
+            temperatureLabel.text = "Заход солнца"
+        } else {
+            let weatherType = data.weatherType
+            conditionImageView.image = weatherType?.image
+            temperatureLabel.text = data.temperature
+        }
     }
     
 }

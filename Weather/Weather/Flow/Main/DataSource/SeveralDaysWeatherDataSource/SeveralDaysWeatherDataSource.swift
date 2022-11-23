@@ -14,6 +14,7 @@ final class SeveralDaysWeatherDataSource: NSObject {
     // - Data
     private var data: [DayWeatherData] = []
     
+    // - Initialization
     init(tableView: UITableView) {
         self.tableView = tableView
         super.init()

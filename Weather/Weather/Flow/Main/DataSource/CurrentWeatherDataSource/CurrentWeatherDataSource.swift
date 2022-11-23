@@ -14,6 +14,7 @@ final class CurrentWeatherDataSource: NSObject {
     // - Data
     private var data: [HourWeatherData] = []
     
+    // - Initialization
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
@@ -42,15 +43,13 @@ extension CurrentWeatherDataSource: UICollectionViewDataSource {
     
 }
 
-// MARK: - UICollectionViewDelegate
-extension CurrentWeatherDataSource: UICollectionViewDelegate {
-    
-}
-
 // MARK: - Layout
 extension CurrentWeatherDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if data[indexPath.row].sunset {
+            return CGSize(width: 153, height: 90)
+        }
         return CGSize(width: 51, height: 90)
     }
     

@@ -26,6 +26,7 @@ final class MainPresenterImplementation {
     // - Delegate
     private weak var delegate: MainPresenterDelegate?
     
+    // - Initialization
     init(delegate: MainPresenterDelegate) {
         self.delegate = delegate
     }

@@ -9,12 +9,15 @@ import UIKit
 
 final class CurrentWeatherView: UIView {
     
+    // - UI
     private lazy var conditionLabel = UILabel()
     private lazy var separator = UIView()
     private lazy var collectionView = UICollectionView()
     
+    // - DataSource
     private var currentWeatherDataSource: CurrentWeatherDataSource?
     
+    // - Data
     private var data: [HourWeatherData] = []
 
     init() {
@@ -54,7 +57,6 @@ private extension CurrentWeatherView {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-//        collectionView.masksToBounds = false
     }
     
     func configureDataSource() {

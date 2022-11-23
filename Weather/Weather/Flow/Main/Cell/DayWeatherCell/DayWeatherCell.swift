@@ -26,6 +26,7 @@ final class DayWeatherCell: UITableViewCell {
     // - Data
     private(set) var data: DayWeatherData?
 
+    // - Initialization
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()

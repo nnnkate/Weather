@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
     // - DataSource
     private var severalDaysWeatherDataSource: SeveralDaysWeatherDataSource?
 
-    // - Life cycle
+    // - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -48,14 +48,9 @@ private extension MainViewController {
     func updateCurrentWeatherView(currentWeatherData: CurrentWeatherData?) {
         cityNameLabel.text = currentWeatherData?.city
         weatherConditionLabel.text = currentWeatherData?.temperature ?? ""
-//        if let weather = currentWeatherData?.weather {
-//            weatherConditionLabel.text = weather.temp // "|"
-//        }
         currentWeatherView.set(title: currentWeatherData?.description ?? "",
                                data: currentWeatherData?.currentWeather ?? [])
     }
-    
-    
     
 }
 

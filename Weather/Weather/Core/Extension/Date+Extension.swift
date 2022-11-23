@@ -8,7 +8,6 @@
 import Foundation
 
 extension Date {
-    
     func getWeekday() -> String {
         let calendar = Calendar.current
         let currentDate = calendar.startOfDay(for: Date())
@@ -27,5 +26,4 @@ extension Date {
         default: return ""
         }
     }
-    
 }

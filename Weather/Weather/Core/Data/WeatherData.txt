@@ -27,7 +27,7 @@
   ],
   "forecast": [
     {
-      "date": "21.10.2022",
+      "date": "23.11.2022",
       "min_temperature": -4,
       "max_temperature": 0,
       "weather_type": "clouds"
