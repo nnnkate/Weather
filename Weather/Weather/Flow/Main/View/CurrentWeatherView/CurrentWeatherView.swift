@@ -48,7 +48,7 @@ private extension CurrentWeatherView {
     func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = .zero
-        layout.itemSize = CGSize(width: 90, height: 40)
+        layout.itemSize = CGSize(width: 51, height: 90)
         layout.scrollDirection = .horizontal
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

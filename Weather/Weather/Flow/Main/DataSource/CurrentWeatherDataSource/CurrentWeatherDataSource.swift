@@ -36,8 +36,7 @@ extension CurrentWeatherDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourWeatherCell.reuseID, for: indexPath) as! HourWeatherCell
-        cell.backgroundColor = .yellow
-//        cell.set(section: sections[indexPath.item])
+        cell.set(data: data[indexPath.row])
         return cell
     }
     
@@ -66,7 +65,7 @@ private extension CurrentWeatherDataSource {
         registerCells()
     }
     
-    func configureCollectionViewLayout(sidePadding: CGFloat = 16, betweenSpace: CGFloat = 33) {
+    func configureCollectionViewLayout(sidePadding: CGFloat = 14, betweenSpace: CGFloat = 14) {
         let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         collectionViewLayout?.sectionInset = .init(top: 0, left: sidePadding, bottom: 0, right: sidePadding)
         collectionViewLayout?.minimumInteritemSpacing = betweenSpace

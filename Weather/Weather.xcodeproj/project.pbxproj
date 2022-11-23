@@ -103,8 +103,8 @@
 		854A4859292E968900ED1A00 /* DayWeatherCell */ = {
 			isa = PBXGroup;
 			children = (
-				85FDE18B292D3FF3005C6E87 /* DayWeatherCell.xib */,
 				85FDE18A292D3FF3005C6E87 /* DayWeatherCell.swift */,
+				85FDE18B292D3FF3005C6E87 /* DayWeatherCell.xib */,
 			);
 			path = DayWeatherCell;
 			sourceTree = "<group>";
