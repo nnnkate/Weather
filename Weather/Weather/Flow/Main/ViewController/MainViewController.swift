@@ -10,11 +10,11 @@ import UIKit
 final class MainViewController: UIViewController {
     
     // - UI
-    @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var weatherConditionLabel: UILabel!
-    @IBOutlet weak var currentWeatherView: CurrentWeatherView!
-    @IBOutlet weak var severalDaysWeatherTableView: UITableView!
+    @IBOutlet private weak var backgroundImage: UIImageView!
+    @IBOutlet private weak var cityNameLabel: UILabel!
+    @IBOutlet private weak var weatherConditionLabel: UILabel!
+    @IBOutlet private weak var currentWeatherView: CurrentWeatherView!
+    @IBOutlet private weak var severalDaysWeatherTableView: UITableView!
     
     // - Presenter
     private(set) lazy var presenter: MainPresenter = MainPresenterImplementation(delegate: self)
@@ -38,8 +38,6 @@ extension MainViewController: MainPresenterDelegate {
                     severalDaysWeatherData: SeveralDaysWeatherData?) {
         updateCurrentWeatherView(currentWeatherData: currentWeatherData)
         severalDaysWeatherDataSource?.set(data: severalDaysWeatherData?.list ?? [])
-        updateSeveralDaysWeatherTableView(severalDaysWeatherData: severalDaysWeatherData)
-        severalDaysWeatherTableView.reloadData()
     }
     
 }
@@ -53,12 +51,11 @@ private extension MainViewController {
 //        if let weather = currentWeatherData?.weather {
 //            weatherConditionLabel.text = weather.temp // "|"
 //        }
-        currentWeatherView.set(data: currentWeatherData)
+        currentWeatherView.set(title: currentWeatherData?.description ?? "",
+                               data: currentWeatherData?.currentWeather ?? [])
     }
     
-    func updateSeveralDaysWeatherTableView(severalDaysWeatherData: SeveralDaysWeatherData?) {
-        
-    }
+    
     
 }
 

@@ -7,14 +7,14 @@
 
 import UIKit
 
-class DayWeatherCell: UITableViewCell {
+final class DayWeatherCell: UITableViewCell {
     
     // - UI
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var conditionImageView: UIImageView!
-    @IBOutlet weak var conditionLabel: UILabel!
-    @IBOutlet weak var minTemperatureLabel: UILabel!
-    @IBOutlet weak var maxTemperatureLabel: UILabel!
+    @IBOutlet private weak var dayLabel: UILabel!
+    @IBOutlet private weak var conditionImageView: UIImageView!
+    @IBOutlet private weak var conditionLabel: UILabel!
+    @IBOutlet private weak var minTemperatureLabel: UILabel!
+    @IBOutlet private weak var maxTemperatureLabel: UILabel!
     
     // - Register Cell
     static let reuseID = "DayWeatherCell"
@@ -48,8 +48,8 @@ private extension DayWeatherCell {
             minTemperatureLabel.text = ""
             maxTemperatureLabel.text = ""
             return }
-        dayLabel.text = data.date
-        let weatherType = WeatherType(rawValue: data.weatherType)
+        dayLabel.text = data.date.standartDate?.getWeekday()
+        let weatherType = data.weatherType
         conditionImageView.image = weatherType?.image
         conditionLabel.isHidden = weatherType != .snow
         conditionLabel.text = weatherType == .snow ? "70 %" : ""

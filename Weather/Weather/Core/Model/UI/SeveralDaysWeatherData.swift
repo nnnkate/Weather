@@ -21,13 +21,13 @@ struct DayWeatherData {
     let date: String
     let minTemperature: Int
     let maxTemperature: Int
-    let weatherType: String
+    let weatherType: WeatherType?
     
     static func convertFromDto(dto: DayWeatherModel?) -> DayWeatherData {
         let data = DayWeatherData(date: dto?.date ?? "",
-                                      minTemperature: dto?.minTemperature ?? 0,
-                                      maxTemperature: dto?.minTemperature ?? 0,
-                                      weatherType: dto?.weatherType ?? "")
+                                  minTemperature: dto?.minTemperature ?? 0,
+                                  maxTemperature: dto?.minTemperature ?? 0,
+                                  weatherType: WeatherType(rawValue: dto?.weatherType ?? ""))
         return data
     }
 }

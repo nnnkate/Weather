@@ -13,7 +13,7 @@ protocol MainPresenter {
 
 protocol MainPresenterDelegate: AnyObject {
     func updateData(currentWeatherData: CurrentWeatherData?,
-                  severalDaysWeatherData: SeveralDaysWeatherData?)
+                    severalDaysWeatherData: SeveralDaysWeatherData?)
 }
 
 final class MainPresenterImplementation {

@@ -25,13 +25,13 @@ struct WeatherModel: Decodable {
 
 struct CurrentWeatherModel: Decodable {
     let timestamp: String
-//    let sunset: Bool = false
+    let sunset: Bool?
     let weatherType: String
     let temperature: String
 
     enum CodingKeys: String, CodingKey {
         case timestamp
-//        case sunset
+        case sunset
         case weatherType = "weather_type"
         case temperature
     }

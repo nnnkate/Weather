@@ -22,6 +22,7 @@ final class SeveralDaysWeatherDataSource: NSObject {
     
     func set(data: [DayWeatherData]) {
         self.data = data
+        tableView.reloadData()
     }
     
 }
@@ -37,7 +38,7 @@ private extension SeveralDaysWeatherDataSource {
     
 }
 
-// MARK: - UITableView Data Source
+// MARK: - UITableViewDataSource
 extension SeveralDaysWeatherDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
